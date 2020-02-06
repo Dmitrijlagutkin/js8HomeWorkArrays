@@ -24,29 +24,27 @@ console.log(myNewArr)
 
 const myElem = Math.ceil(myNewArr.length / 2 - 1)
 console.log(myElem)
+const mediumElem = myNewArr[myElem]
 console.log(`Средний элемент массива №${myElem} - ${myNewArr[myElem]}`)
 
 // -----
 
 myNewArr.shift()
+myNewArr.unshift(mediumElem)
 console.log(myNewArr)
-
 
 // -----
 
 myNewArr.every(elem => elem > 0) ? console.log('в массиве все єлементы > 0') : console.log('в массиве есть єлементы < 0')
-
 // -----
 
-myNewArr.every(elem => elem === 0) ? console.log('в массиве есть элемент = 0') : console.log('в массиве нет элементов = 0')
+myNewArr.indexOf(elem => elem === -1) ? console.log('в массиве нет элементов = 0') : console.log('в массиве есть элемент = 0')
 
-// -----------first part----------------
+// -----------second part----------------
 
 let string = "Lorem ipsum dolor sit amet"
 let stringArr = string.split('')
-
-console.log(stringArr)
-console.log(stringArr.join(''))
+stringArr.join('')
 let stringArrRewerse = stringArr.reverse()
 console.log(stringArrRewerse.join(''))
 
@@ -56,20 +54,15 @@ let myString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
 
 let myStringArr = myString.split('. ')
 console.log(myStringArr)
-for (let i = 0; i < myStringArr.length; i++) {
-	if (myStringArr[i] === 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.') {
-		myStringArr[i] = myStringArr[i].toUpperCase()
-	}
-}
-
+myStringArr.push(myStringArr[3].toUpperCase())
 console.log(myStringArr.join('\n'))
 
 // --------fourth part*----------
 
-let myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// let myArr = [111, 112, 113, 114, 115, 116, 117, 118, 119]
 
-myArr.sort((number) => {
-	return number - Math.random() * 10
-})
+// myArr.sort((prev, next) => {
+// 	return (prev * Math.random()) - (next * Math.random())
+// })
 
-console.log(myArr)
+// console.log(myArr)
