@@ -22,31 +22,30 @@ console.log(myNewArr)
 
 // -----
 
-const myElem = Math.ceil(myNewArr.length / 2 - 1)
+const myElem = Math.ceil((myNewArr.length - 1) / 2)
 console.log(myElem)
 const mediumElem = myNewArr[myElem]
 console.log(`Средний элемент массива №${myElem} - ${myNewArr[myElem]}`)
 
-// -----
+	-- -- -
 
-myNewArr.shift()
+	myNewArr.shift()
 myNewArr.unshift(mediumElem)
 console.log(myNewArr)
 
 // -----
-
-myNewArr.every(elem => elem > 0) ? console.log('в массиве все єлементы > 0') : console.log('в массиве есть єлементы < 0')
+const isEvery = myNewArr.every(elem => elem > 0)
+console.log(isEvery ? 'в массиве все єлементы > 0' : 'в массиве не все єлементы > 0')
 // -----
+const isSome = myNewArr.some(elem => elem === 0)
+console.log(isSome ? 'в массиве есть элемент = 0' : 'в массиве нет элементов = 0')
 
-myNewArr.some(elem => elem === 0) ? console.log('в массиве есть элемент = 0') : console.log('в массиве нет элементов = 0')
-
-// -----------second part----------------
+	-- -- -- -- -- - second part-- -- -- -- -- -- -- --
 
 let string = "Lorem ipsum dolor sit amet"
 let stringArr = string.split('')
-stringArr.join('')
-let stringArrRewerse = stringArr.reverse()
-console.log(stringArrRewerse.join(''))
+stringArr.reverse()
+console.log(stringArr.join(''))
 
 // -----------tgird part----------------
 
@@ -55,7 +54,7 @@ let myString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
 let myStringArr = myString.split('. ')
 console.log(myStringArr)
 let arrLen = myStringArr.length
-myStringArr[arrLen - 1].toUpperCase()
+myStringArr[arrLen - 1] = myStringArr[arrLen - 1].toUpperCase()
 console.log(myStringArr.join('\n'))
 
 // --------fourth part----------
@@ -81,9 +80,9 @@ fourthArr.sort((prev, next) => {
 })
 
 function checkElement(number) {
-	return number === number.toFixed(0);
+	return Number.isInteger(number)
 }
-let filteredArr = fourthArr.filter(checkElement);
+let filteredArr = fourthArr.filter(checkElement)
 console.log(filteredArr)
 delete filteredArr
 
