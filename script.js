@@ -65,6 +65,9 @@ let secondArr = []
 
 for (let i = 0; i < 10; i++) {
 	firstArr.push(Math.random() * 10)
+}
+
+for (let i = 0; i < 20; i++) {
 	secondArr.push(Math.random() * -10)
 }
 
