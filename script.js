@@ -38,7 +38,7 @@ console.log(myNewArr)
 myNewArr.every(elem => elem > 0) ? console.log('в массиве все єлементы > 0') : console.log('в массиве есть єлементы < 0')
 // -----
 
-myNewArr.indexOf(elem => elem === -1) ? console.log('в массиве нет элементов = 0') : console.log('в массиве есть элемент = 0')
+myNewArr.some(elem => elem === 0) ? console.log('в массиве есть элемент = 0') : console.log('в массиве нет элементов = 0')
 
 // -----------second part----------------
 
@@ -54,15 +54,42 @@ let myString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
 
 let myStringArr = myString.split('. ')
 console.log(myStringArr)
-myStringArr.push(myStringArr[3].toUpperCase())
+let arrLen = myStringArr.length
+myStringArr[arrLen - 1].toUpperCase()
 console.log(myStringArr.join('\n'))
 
-// --------fourth part*----------
+// --------fourth part----------
 
-// let myArr = [111, 112, 113, 114, 115, 116, 117, 118, 119]
+let firstArr = []
+let secondArr = []
 
-// myArr.sort((prev, next) => {
-// 	return (prev * Math.random()) - (next * Math.random())
-// })
+for (let i = 0; i < 10; i++) {
+	firstArr.push(Math.random() * 10)
+	secondArr.push(Math.random() * -10)
+}
 
-// console.log(myArr)
+let thirdArr = firstArr.concat(secondArr)
+let fourthArr = thirdArr.map(function (newElem) {
+	return newElem / 5;
+})
+
+fourthArr.sort((prev, next) => {
+	return prev - next
+})
+
+function checkElement(number) {
+	return number === number.toFixed(0);
+}
+let filteredArr = fourthArr.filter(checkElement);
+console.log(filteredArr)
+delete filteredArr
+
+// --------fifth  part*----------
+
+let myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+myArr.sort((prev, next) => {
+	return Math.random() - 0.5
+})
+
+console.log(myArr)
